@@ -56,3 +56,32 @@ neighbours.pop();
 
 neighbours[neighbours.indexOf("Macedonia")] = "North Macedonia";
 console.log(neighbours);
+
+//LECTURE: Introduction to Objects
+const myCountry = {
+    country: "Bulgaria",
+    capital: "Sofia",
+    language: "bulgarian",
+    population: 6,
+    neighbours: ["Greece", "Macedonia", "Serbia", "Romania", "Turkey"],
+
+    describe: function () {
+        console.log(`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring contries and a capital called ${this.capital}.`);
+    },
+
+    checkIsland: function () {
+        this.isIsland = this.neighbours.length === 0 ? true : false
+    }
+
+};
+console.log(myCountry);
+
+//LECTURE: Dot vs. Bracket Notation
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring contries and a capital called ${myCountry.capital}.`);
+myCountry.population += 2;
+myCountry["population"] -= 2;
+
+//LECTURE: Object Methods
+myCountry.describe();
+myCountry.checkIsland();
+console.log(myCountry.isIsland);
