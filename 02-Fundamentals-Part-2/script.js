@@ -32,3 +32,27 @@ function describePopulation(country, population) {
 }
 
 console.log(describePopulation("Bulgaria", 1441));
+
+//LECTURE: Introduction to Arrays
+const populations = [6, 15, 23, 4];
+console.log(populations.length === 4);
+
+const percentages = [
+    percentageOfWorld1(populations[0]),
+    percentageOfWorld1(populations[1]),
+    percentageOfWorld1(populations[2]),
+    percentageOfWorld1(populations[3])
+];
+console.log(percentages);
+
+//LECTURE: Basic Array Operations (Methods)
+const neighbours = ["Greece", "Macedonia", "Serbia", "Romania", "Turkey"];
+
+neighbours.push("Utopia");
+console.log(neighbours);
+neighbours.pop();
+
+!neighbours.includes("Germany") ? console.log("Probably not a central European country :D") : null;
+
+neighbours[neighbours.indexOf("Macedonia")] = "North Macedonia";
+console.log(neighbours);
