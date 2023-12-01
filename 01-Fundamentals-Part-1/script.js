@@ -17,7 +17,7 @@ console.log(typeof country);
 console.log(typeof language);
 
 //LECTURE: let, const and var
-language = "bulgarian";
+language = "english";
 
 //LECTURE: Basic Operators
 console.log(population / 2);
@@ -37,4 +37,25 @@ if (population > 33) {
     console.log(`${country}'s population is above average`);
 } else {
     console.log(`${country}'s population is ${33 - population} million below average`);
+}
+
+//Type Conversion and Coercion
+console.log('9' - '5');
+console.log('19' - '13' + '17');
+console.log('19' - '13' + 17);
+console.log('123' < 57);
+console.log(5 + 6 + '4' + 9 - 4 - 2);
+
+//LECTURE: Equality Operators: == vs. ===
+// let numNeighbours = Number(prompt('How many neighbour countries does your country have?'));
+
+// if (numNeighbours === 1) console.log("Only one border!");
+// else if (numNeighbours > 1) console.log("More than one border!")
+// else console.log("No borders")
+
+//LECTURE: Logical Operators
+if (language === "english" && population < 50 && !isIsland) {
+    console.log(`You should live in ${country} :)`);
+} else {
+    console.log(`${country} does't meet your criteria`);
 }
