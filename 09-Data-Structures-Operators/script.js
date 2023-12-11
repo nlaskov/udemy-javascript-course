@@ -88,3 +88,33 @@ for (const player of game.scored) {
 }
 
 console.log(scorers);
+
+//Challenge 3: Football game
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '� Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '� Substitution'],
+  [64, '� Yellow card'],
+  [69, '� Red card'],
+  [70, '� Substitution'],
+  [72, '� Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '� Yellow card'],
+]);
+
+const events = [...new Set([...gameEvents.values()])];
+console.log(events);
+
+gameEvents.delete(64);
+console.log(gameEvents);
+
+console.log(
+  `An event happened, on avaerage every ${90 / gameEvents.size} minutes.`
+);
+
+for (const [time, event] of gameEvents) {
+  const timeStr = time <= 45 ? `[First half]` : `[Second half]`;
+  console.log(`${timeStr} ${time}: ${event}`);
+}
