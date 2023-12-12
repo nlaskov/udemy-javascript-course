@@ -118,3 +118,37 @@ for (const [time, event] of gameEvents) {
   const timeStr = time <= 45 ? `[First half]` : `[Second half]`;
   console.log(`${timeStr} ${time}: ${event}`);
 }
+
+//Challenge 4: Strings
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const button = document.getElementsByTagName('button')[0];
+
+button.addEventListener('click', function () {
+  const values = document.getElementsByTagName('textarea')[0].value.split('\n');
+  console.log(values);
+
+  switchToCamel(values);
+});
+
+function switchToCamel(values) {
+  for (let [i, value] of values.entries()) {
+    value = value.toLowerCase().trim();
+    while (value.indexOf('_') != -1) {
+      value =
+        value.slice(0, value.indexOf('_') + 1) +
+        value[value.indexOf('_') + 1].toUpperCase() +
+        value.slice(value.indexOf('_') + 2);
+
+      value =
+        value.slice(0, value.indexOf('_')) +
+        value.slice(value.indexOf('_') + 1);
+    }
+
+    value = value.padEnd(20);
+
+    console.log(`${value}${'*'.repeat(i + 1)}`);
+  }
+}
