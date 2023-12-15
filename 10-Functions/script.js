@@ -27,3 +27,11 @@ document
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
 
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+
+(function () {
+  const header = document.querySelector('h1'); 
+  header.style.color = 'red';
+  document.querySelector("body").addEventListener('click',function() {
+    header.style.color = 'blue';
+  })
+  })();
