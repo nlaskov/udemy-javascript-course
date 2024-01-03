@@ -105,4 +105,4 @@ class EVCl extends CarCl {
 const tesla1 = new EVCl('Tesla', 120, 23);
 
 console.log(tesla1);
-// console.log(tesla1.#charge);
+console.log(tesla1.#charge);
